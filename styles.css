@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Hampus Holm — M.Sc. Product Development & Engineering Showcase
+   Hampus Holm: M.Sc. Product Development & Engineering Showcase
    Aesthetic: Scandinavian Minimalism x Understated Ralph Lauren
    Palette: Warm Off-White / Alabaster, Deep Ralph Lauren Navy, Subtle Camel
    ========================================================================== */
@@ -24,17 +24,15 @@
   --camel-border: #e6dcce;         /* Soft camel border for cards & frames */
   --camel-dark: #634b28;           /* Camel text for tags */
 
-  /* Warm Architectural Container Palette (Rich Muted Linen / Warm Biscuit Tone) */
-  --bg-showcase: #f6efe4;          /* Rich, warm, welcoming biscuit-cream tone */
-  --bg-showcase-subtle: #ede3d3;   /* Soft recessed tone */
-  --border-showcase: #e7dac9;      /* Delicate organic border */
-  --border-showcase-hover: #d3beaa;
-  --shadow-showcase: 0 16px 40px -12px rgba(65, 48, 28, 0.08), 
-                     0 6px 18px -4px rgba(65, 48, 28, 0.04), 
-                     0 1px 3px rgba(0, 0, 0, 0.02);
-  --shadow-showcase-hover: 0 24px 54px -14px rgba(65, 48, 28, 0.13), 
-                           0 10px 24px -5px rgba(65, 48, 28, 0.07), 
-                           0 1px 4px rgba(0, 0, 0, 0.03);
+  /* Warm Architectural Container Palette: Softened Luxury Alabaster Tone */
+  --bg-showcase: #f8f4ed;          /* Soft, refined, subtle alabaster tone */
+  --bg-showcase-subtle: #f2ebe0;   /* Soft recessed tone */
+  --border-showcase: rgba(214, 201, 185, 0.55); /* Delicate organic border */
+  --border-showcase-hover: rgba(180, 155, 126, 0.7);
+  --shadow-showcase: 0 10px 30px -8px rgba(65, 48, 28, 0.05), 
+                     0 2px 8px -2px rgba(65, 48, 28, 0.02);
+  --shadow-showcase-hover: 0 18px 40px -10px rgba(65, 48, 28, 0.08), 
+                           0 4px 14px -3px rgba(65, 48, 28, 0.03);
 
   /* Charcoal-Black Typography */
   --text-charcoal: #141414;        /* Pure crisp charcoal-black for high legibility */
@@ -57,7 +55,9 @@
   --radius-xs: 3px;
   --radius-sm: 6px;
   --radius-md: 8px;
-  --transition: 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-card: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   --shadow-subtle: 0 2px 8px rgba(15, 29, 56, 0.04);
   --shadow-hover: 0 12px 30px rgba(15, 29, 56, 0.07);
 }
@@ -80,7 +80,7 @@ body {
   font-family: var(--font-sans);
   background-color: var(--bg-canvas);
   color: var(--text-body);
-  line-height: 1.7;
+  line-height: 1.78;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -104,7 +104,7 @@ h1, h2, h3, h4 {
 p {
   color: var(--text-body);
   font-size: 1.02rem;
-  line-height: 1.72;
+  line-height: 1.78;
 }
 
 a {
@@ -134,7 +134,7 @@ a {
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   color: var(--camel-accent);
   margin-bottom: 14px;
 }
@@ -174,7 +174,7 @@ a {
   padding: 12px 24px;
   font-size: 0.88rem;
   font-weight: 600;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.03em;
   border-radius: var(--radius-xs);
   cursor: pointer;
   transition: all var(--transition);
@@ -190,8 +190,8 @@ a {
 .btn-navy:hover {
   background-color: var(--navy-hover);
   border-color: var(--navy-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(15, 29, 56, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px -4px rgba(15, 29, 56, 0.22);
 }
 
 .btn-secondary {
@@ -203,7 +203,8 @@ a {
 .btn-secondary:hover {
   background-color: var(--bg-card-subtle);
   border-color: var(--camel-accent);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px -4px rgba(15, 29, 56, 0.08);
 }
 
 .btn-camel-outline {
@@ -215,6 +216,8 @@ a {
 .btn-camel-outline:hover {
   background-color: var(--camel-bg);
   border-color: var(--camel-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px -4px rgba(99, 75, 40, 0.1);
 }
 
 /* ==========================================================================
@@ -248,7 +251,7 @@ a {
 .brand-name {
   font-size: 1rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--navy-primary);
 }
@@ -257,7 +260,7 @@ a {
   font-size: 0.74rem;
   color: var(--camel-accent);
   font-weight: 600;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -275,6 +278,7 @@ a {
   letter-spacing: 0.02em;
   position: relative;
   padding: 4px 0;
+  transition: color var(--transition);
 }
 
 .nav-link:hover,
@@ -300,6 +304,11 @@ a {
   color: var(--navy-primary);
   cursor: pointer;
   padding: 6px 10px;
+  transition: all var(--transition);
+}
+
+.mobile-toggle:hover {
+  border-color: var(--camel-accent);
 }
 
 /* ==========================================================================
@@ -319,12 +328,13 @@ a {
   background-color: var(--camel-bg);
   border: 1px solid var(--camel-border);
   border-radius: 9999px;
-  font-size: 0.76rem;
+  font-size: 0.74rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
   color: var(--camel-dark);
   margin-bottom: 26px;
+  transition: all var(--transition);
 }
 
 .hero-tag-dot {
@@ -346,7 +356,7 @@ a {
 
 .hero-lead {
   font-size: 1.2rem;
-  line-height: 1.7;
+  line-height: 1.76;
   color: var(--text-muted);
   max-width: 760px;
   margin-bottom: 38px;
@@ -775,10 +785,10 @@ a {
   background-color: var(--bg-showcase);
   border: 1px solid var(--border-showcase);
   border-radius: var(--radius-md);
-  padding: 52px;
+  padding: 44px 48px;
   box-shadow: var(--shadow-showcase);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
-              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
               border-color 0.3s ease;
 }
 
@@ -789,7 +799,7 @@ a {
 .showcase-block:hover {
   border-color: var(--border-showcase-hover);
   box-shadow: var(--shadow-showcase-hover);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 /* Project Header & Meta */
@@ -806,10 +816,10 @@ a {
 }
 
 .camel-pill {
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.13em;
   padding: 4px 12px;
   background-color: var(--camel-bg);
   border: 1px solid var(--camel-border);
@@ -835,12 +845,12 @@ a {
 .showcase-lead {
   font-size: 1.08rem;
   color: var(--text-body);
-  line-height: 1.7;
+  line-height: 1.78;
   max-width: 920px;
 }
 
 /* ==========================================================================
-   Architectural Floating Gallery (Borderless, Deep Floating Shadows)
+   Architectural Gallery: Clean Single Active Image Focus
    ========================================================================== */
 .interactive-gallery {
   margin: 36px 0 44px 0;
@@ -860,6 +870,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 12px;
 }
 
 .gallery-stage {
@@ -868,89 +879,55 @@ a {
   position: relative;
 }
 
-/* Floating Architectural Slides */
+/* Gallery Slides: Clean Presentation Without Duplicate Background Layers */
 .gallery-slide {
   position: absolute;
-  top: 16px;
-  bottom: 16px;
-  width: 68%;
-  left: 16%;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   background: transparent;
   border: none;
-  border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), 
-              opacity 0.55s ease, 
-              filter 0.55s ease;
+  opacity: 0;
+  visibility: hidden;
   pointer-events: none;
+  transform: scale(0.985);
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: default;
 }
 
-/* Floating Center Active Slide */
+/* Active Main Slide */
 .gallery-slide.active {
-  transform: translateX(0) scale(1);
   opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: scale(1);
   z-index: 5;
-  pointer-events: auto;
-  filter: drop-shadow(0 24px 45px rgba(15, 29, 56, 0.22)) drop-shadow(0 6px 12px rgba(15, 29, 56, 0.08));
 }
 
-/* Previous Slide Floating on Left */
-.gallery-slide.prev-slide {
-  transform: translateX(-78%) scale(0.85);
-  opacity: 0.42;
-  z-index: 3;
-  pointer-events: auto;
-  cursor: pointer;
-  filter: drop-shadow(0 12px 24px rgba(15, 29, 56, 0.14)) grayscale(15%);
-}
-
-.gallery-slide.prev-slide:hover {
-  opacity: 0.72;
-  transform: translateX(-76%) scale(0.87);
-}
-
-/* Next Slide Floating on Right */
-.gallery-slide.next-slide {
-  transform: translateX(78%) scale(0.85);
-  opacity: 0.42;
-  z-index: 3;
-  pointer-events: auto;
-  cursor: pointer;
-  filter: drop-shadow(0 12px 24px rgba(15, 29, 56, 0.14)) grayscale(15%);
-}
-
-.gallery-slide.next-slide:hover {
-  opacity: 0.72;
-  transform: translateX(76%) scale(0.87);
-}
-
-/* Hidden Slides Offstage */
-.gallery-slide.hidden-left {
-  transform: translateX(-145%) scale(0.75);
-  opacity: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-
+/* Non active Slides: Completely Hidden (No Harsh Ghost or Overlapping Layers) */
+.gallery-slide.prev-slide,
+.gallery-slide.next-slide,
+.gallery-slide.hidden-left,
 .gallery-slide.hidden-right {
-  transform: translateX(145%) scale(0.75);
   opacity: 0;
-  z-index: 1;
+  visibility: hidden;
   pointer-events: none;
+  transform: scale(0.985);
 }
 
-/* The Floating Image itself — No Paper Box Margins */
+/* Active Image: Crisp Modern Border Radius and Soft Unified Shadow */
 .gallery-slide-img {
   max-width: 100%;
   max-height: 100%;
   width: auto;
   height: auto;
   object-fit: contain;
-  border-radius: var(--radius-sm);
-  box-shadow: 0 16px 36px -6px rgba(15, 29, 56, 0.24), 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  box-shadow: 0 12px 32px -6px rgba(15, 29, 56, 0.12), 0 4px 12px -2px rgba(15, 29, 56, 0.04), 0 0 0 1px rgba(15, 29, 56, 0.05);
   background: transparent;
   padding: 0;
   border: none;
@@ -988,7 +965,7 @@ a {
   font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   color: var(--camel-accent);
 }
 
@@ -1041,13 +1018,13 @@ a {
   justify-content: center;
   cursor: pointer;
   z-index: 10;
-  transition: all var(--transition);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 4px 14px rgba(15, 29, 56, 0.22);
 }
 
 .gallery-nav-btn:hover {
   background-color: var(--navy-hover);
-  transform: translateY(-50%) scale(1.08);
+  transform: translateY(-50%) scale(1.06);
 }
 
 .gallery-nav-btn.prev {
@@ -1079,7 +1056,7 @@ a {
   cursor: pointer;
   background: rgba(255, 255, 255, 0.5);
   position: relative;
-  transition: all var(--transition);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 2px 6px rgba(99, 75, 40, 0.04);
   padding: 0;
 }
@@ -1123,7 +1100,7 @@ a {
 .editorial-col h4 {
   font-size: 0.95rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.12em;
   color: var(--navy-primary);
   margin-bottom: 12px;
   display: flex;
@@ -1141,9 +1118,14 @@ a {
 }
 
 .editorial-col p {
-  font-size: 0.96rem;
+  font-size: 0.98rem;
   color: var(--text-body);
-  line-height: 1.7;
+  line-height: 1.78;
+  margin-bottom: 16px;
+}
+
+.editorial-col p:last-child {
+  margin-bottom: 0;
 }
 
 .editorial-col p + p {
@@ -1214,8 +1196,15 @@ a {
   background-color: var(--bg-showcase);
   border: 1px solid var(--border-showcase);
   border-radius: var(--radius-sm);
-  padding: 56px;
+  padding: 44px 48px;
   box-shadow: var(--shadow-showcase);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-container-card:hover {
+  border-color: var(--border-showcase-hover);
+  box-shadow: var(--shadow-showcase-hover);
+  transform: translateY(-2px);
 }
 
 .about-text-content {
@@ -1239,8 +1228,15 @@ a {
   background-color: var(--bg-showcase);
   border: 1px solid var(--border-showcase);
   border-radius: var(--radius-sm);
-  padding: 56px;
+  padding: 44px 48px;
   box-shadow: var(--shadow-showcase);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-container-card:hover {
+  border-color: var(--border-showcase-hover);
+  box-shadow: var(--shadow-showcase-hover);
+  transform: translateY(-2px);
 }
 
 .contact-layout {
@@ -1260,7 +1256,7 @@ a {
 .contact-text {
   font-size: 1.05rem;
   color: var(--text-muted);
-  line-height: 1.7;
+  line-height: 1.76;
   margin-bottom: 32px;
 }
 
@@ -1284,7 +1280,8 @@ a {
 .channel-tile:hover {
   background-color: #ffffff;
   border-color: var(--camel-accent);
-  transform: translateX(4px);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px rgba(65, 48, 28, 0.08);
 }
 
 .channel-info {
@@ -1296,7 +1293,7 @@ a {
   font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.13em;
   color: var(--camel-accent);
 }
 
@@ -1323,6 +1320,8 @@ a {
   background-color: var(--navy-primary);
   color: #ffffff;
   border-color: var(--navy-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(15, 29, 56, 0.15);
 }
 
 /* Toast */
