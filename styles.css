@@ -1150,27 +1150,46 @@ a {
 }
 
 .editorial-col ul li::before {
-  content: "—";
+  content: "•";
   color: var(--camel-accent);
   font-weight: bold;
 }
 
-/* Tech Tag Pill Strip */
+/* Tech Tag Pill Strip: Modern Clean Tech Stack Badges */
 .tag-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  align-items: center;
+  gap: 8px 10px;
   margin-bottom: 28px;
 }
 
 .tag-pill {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  padding: 4px 10px;
-  background-color: rgba(255, 255, 255, 0.65);
-  border: 1px solid var(--border-showcase);
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 0.015em;
   color: var(--navy-primary);
-  border-radius: var(--radius-xs);
+  background-color: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(214, 201, 185, 0.65);
+  border-radius: 9999px;
+  padding: 5px 13px;
+  box-shadow: 0 1px 2px rgba(15, 29, 56, 0.03);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: var(--transition-fast);
+  user-select: none;
+}
+
+.tag-pill:hover {
+  background-color: #ffffff;
+  border-color: var(--camel-accent);
+  color: var(--navy-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px -2px rgba(15, 29, 56, 0.08);
 }
 
 /* Showcase Action Bar */
@@ -1731,13 +1750,13 @@ a {
   }
 
   .tag-container {
-    gap: 6px;
+    gap: 6px 8px;
     margin-bottom: 22px;
   }
 
   .tag-pill {
     font-size: 0.72rem;
-    padding: 4px 8px;
+    padding: 4px 10px;
     white-space: normal;
     word-break: break-word;
   }
