@@ -84,6 +84,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Typography Hierarchy */
@@ -1225,17 +1232,6 @@ a {
   margin: 0;
 }
 
-@media (max-width: 768px) {
-  .about-container-card {
-    padding: 36px 24px;
-  }
-
-  .about-text-content p {
-    font-size: 0.98rem;
-    line-height: 1.72;
-  }
-}
-
 /* ==========================================================================
    Contact Section: Tailored Understated Ralph Lauren Aesthetic
    ========================================================================== */
@@ -1438,7 +1434,20 @@ a {
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+    max-width: 100%;
+  }
+
   .header {
     height: 62px;
   }
@@ -1452,14 +1461,17 @@ a {
     top: 62px;
     left: 0;
     right: 0;
+    width: 100%;
+    max-width: 100vw;
     background-color: var(--bg-canvas);
     border-bottom: 1px solid var(--border-hairline);
     flex-direction: column;
-    padding: 24px 32px;
-    gap: 20px;
+    padding: 24px 20px;
+    gap: 18px;
     transform: translateY(-150%);
     transition: transform 0.25s ease;
     box-shadow: 0 10px 20px rgba(15, 29, 56, 0.08);
+    box-sizing: border-box;
   }
 
   .nav-menu.open {
@@ -1467,30 +1479,66 @@ a {
   }
 
   .section {
-    padding-top: 72px;
-    padding-bottom: 72px;
+    padding-top: 68px;
+    padding-bottom: 68px;
+  }
+
+  .section-title {
+    font-size: 1.85rem;
+    line-height: 1.25;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .section-subtitle {
+    font-size: 0.98rem;
+    line-height: 1.62;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .hero {
-    padding-top: calc(62px + 40px);
-    padding-bottom: 60px;
+    padding-top: calc(62px + 36px);
+    padding-bottom: 56px;
+  }
+
+  .hero-tag {
+    font-size: 0.72rem;
+    padding: 5px 12px;
+    max-width: 100%;
+    word-break: break-word;
   }
 
   .hero-title {
-    font-size: 2.2rem;
+    font-size: 2.15rem;
+    line-height: 1.18;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .hero-lead {
+    font-size: 1.02rem;
+    line-height: 1.65;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    margin-bottom: 28px;
   }
 
   .hero-metrics-strip {
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
+    margin-top: 36px;
+    padding-top: 24px;
+    width: 100%;
   }
 
   .education-card,
-  .education-card.is-compact {
+  .education-card.is-compact,
+  .education-card.is-expanded {
     width: 100%;
     flex: none;
     min-width: 0;
-    padding: 22px 20px;
+    padding: 20px 16px;
     opacity: 1;
   }
 
@@ -1505,19 +1553,106 @@ a {
     -webkit-line-clamp: unset;
   }
 
+  .edu-card-header {
+    gap: 12px;
+  }
+
+  .edu-header-text {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .edu-header-text .metric-val {
+    font-size: 1.05rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .edu-expand-trigger {
+    flex-shrink: 0;
+    font-size: 0.68rem;
+    padding: 5px 9px;
+  }
+
+  .course-item-header {
+    gap: 8px;
+  }
+
+  .course-item-title-group {
+    flex-wrap: wrap;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  .course-name {
+    font-size: 0.82rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
   .remaining-grid {
     grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .showcase-block {
+    padding: 28px 18px;
+    margin-bottom: 60px;
+    border-radius: var(--radius-sm);
+  }
+
+  .showcase-pills {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .showcase-date {
+    margin-left: 0;
+    width: 100%;
+    margin-top: 4px;
+  }
+
+  .showcase-title {
+    font-size: 1.65rem;
+    line-height: 1.25;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .showcase-lead {
+    font-size: 0.96rem;
+    line-height: 1.65;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .interactive-gallery {
+    margin: 24px 0 32px 0;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
   }
 
   .gallery-viewport {
-    height: 300px;
+    height: 280px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
   }
 
   .gallery-slide {
-    width: 86%;
-    left: 7%;
-    top: 10px;
-    bottom: 10px;
+    width: 88%;
+    left: 6%;
+    top: 8px;
+    bottom: 8px;
+  }
+
+  .gallery-slide-img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
   }
 
   .gallery-slide.prev-slide {
@@ -1529,52 +1664,218 @@ a {
   }
 
   .gallery-caption-bar {
-    padding: 14px 16px;
+    padding: 12px 14px;
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
+    gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .caption-meta {
     width: 100%;
+    min-width: 0;
+  }
+
+  .caption-badge {
+    font-size: 0.68rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .caption-heading {
-    font-size: 0.96rem;
+    font-size: 0.94rem;
     white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .caption-subtext {
     display: block;
-    font-size: 0.84rem;
+    font-size: 0.82rem;
     line-height: 1.5;
     white-space: normal;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .caption-counter {
     align-self: flex-start;
+    font-size: 0.72rem;
   }
 
   .gallery-nav-btn {
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
   }
 
   .gallery-nav-btn.prev {
-    left: 8px;
+    left: 6px;
   }
 
   .gallery-nav-btn.next {
-    right: 8px;
+    right: 6px;
+  }
+
+  .gallery-thumbnails-strip {
+    gap: 8px;
+    padding: 12px 0 4px 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .gallery-thumb-item {
-    flex: 0 0 76px;
-    height: 52px;
+    flex: 0 0 72px;
+    height: 50px;
+  }
+
+  .tag-container {
+    gap: 6px;
+    margin-bottom: 22px;
+  }
+
+  .tag-pill {
+    font-size: 0.72rem;
+    padding: 4px 8px;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .showcase-action-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    padding-top: 20px;
+  }
+
+  .showcase-action-bar .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.82rem;
+    padding: 11px 16px;
+  }
+
+  .action-note {
+    font-size: 0.76rem;
+    line-height: 1.5;
+    text-align: center;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .about-container-card {
+    padding: 30px 20px;
+  }
+
+  .about-text-content {
+    width: 100%;
+  }
+
+  .about-text-content p {
+    font-size: 0.96rem;
+    line-height: 1.7;
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   .contact-container-card {
-    padding: 28px;
+    padding: 30px 20px;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .contact-headline {
+    font-size: 1.65rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .contact-text {
+    font-size: 0.96rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    margin-bottom: 24px;
+  }
+
+  .contact-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .contact-actions .btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .channel-tile {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+
+  .channel-info {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .channel-val {
+    font-size: 0.88rem;
+    word-break: break-all;
+    overflow-wrap: break-word;
+  }
+
+  .footer {
+    padding: 36px 0;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    word-break: break-word;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero-title {
+    font-size: 1.85rem;
+  }
+
+  .showcase-block {
+    padding: 22px 14px;
+  }
+
+  .gallery-viewport {
+    height: 240px;
+  }
+
+  .gallery-slide {
+    width: 92%;
+    left: 4%;
+  }
+
+  .about-container-card {
+    padding: 22px 14px;
+  }
+
+  .contact-container-card {
+    padding: 22px 14px;
+  }
+
+  .gallery-thumb-item {
+    flex: 0 0 62px;
+    height: 44px;
   }
 }
 
